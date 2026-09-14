@@ -214,9 +214,9 @@ export const MapPage: React.FC = () => {
                     />
                     <rect x="8" y="8" width="40" height="24" rx="6" fill="#e11d48" />
                     <text x="28" y="24" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle">학부모</text>
-                    <text x="56" y="24" fill="#9f1239" fontSize="13" fontWeight="bold">꿈이음마당 💝</text>
-                    <text x="12" y="48" fill="#881337" fontSize="12" fontWeight="bold">학부모회 재능기부 체험</text>
-                    <text x="12" y="68" fill="#be123c" fontSize="11">5-1 교실 앞 복도</text>
+                    <text x="56" y="24" fill="#9f1239" fontSize="13" fontWeight="bold">꿈이음 야시장 🎪</text>
+                    <text x="12" y="48" fill="#881337" fontSize="12" fontWeight="bold">링던지기·인형맞추기·뽑기</text>
+                    <text x="12" y="68" fill="#be123c" fontSize="11">참가선물 간식 제공 🍭</text>
                     {isFav && <text x="190" y="24" fontSize="16">💖</text>}
                   </g>
                 );
@@ -261,12 +261,43 @@ export const MapPage: React.FC = () => {
                 );
               })()}
 
-              {/* 2. 일반교실 B */}
-              <g transform="translate(160, 160)">
-                <rect width="115" height="280" rx="10" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="2" />
-                <text x="57" y="140" fill="#64748b" fontSize="14" fontWeight="bold" textAnchor="middle">일반 교실</text>
-                <text x="57" y="165" fill="#94a3b8" fontSize="12" textAnchor="middle">(비체험 구역)</text>
-              </g>
+              {/* 2. 드론체험실 (5-1 드론 비행 체험장 - 학생자치실 옆 교실) */}
+              {(() => {
+                const bDrone = BOOTHS.find((b) => b.id === 'b5-1-drone');
+                const isFav = isFavorite('b5-1-drone');
+                const isHl = highlightParam === 'b5-1-drone';
+                return (
+                  <g
+                    onClick={() => bDrone && setSelectedBooth(bDrone)}
+                    className="cursor-pointer transition-all group"
+                    transform="translate(160, 160)"
+                  >
+                    <rect
+                      width="115"
+                      height="280"
+                      rx="12"
+                      fill={isFav ? '#fef9c3' : '#f0f9ff'}
+                      stroke={isFav || isHl ? '#f59e0b' : '#7dd3fc'}
+                      strokeWidth={isFav || isHl ? '3' : '2'}
+                      filter={isFav || isHl ? 'url(#glow-gold)' : undefined}
+                      className="group-hover:fill-sky-100 transition-colors"
+                    />
+                    <rect x="0" y="0" width="115" height="32" rx="10" fill="#0284c7" />
+                    <text x="57" y="21" fill="#fff" fontSize="12" fontWeight="bold" textAnchor="middle">드론체험실</text>
+
+                    <text x="15" y="70" fontSize="28">🛸</text>
+                    <text x="12" y="105" fill="#0369a1" fontSize="11" fontWeight="bold">5-1 드론</text>
+                    <text x="12" y="128" fill="#0c4a6e" fontSize="13" fontWeight="black">드론 비행장</text>
+                    <text x="12" y="150" fill="#0284c7" fontSize="10">단독 비행 체험</text>
+                    <text x="12" y="168" fill="#64748b" fontSize="10">안전망 전용 공간</text>
+
+                    <rect x="10" y="195" width="95" height="24" rx="6" fill="#e0f2fe" />
+                    <text x="57" y="211" fill="#0369a1" fontSize="10" fontWeight="bold" textAnchor="middle">전학년 대상</text>
+
+                    {isFav && <text x="85" y="68" fontSize="16">💖</text>}
+                  </g>
+                );
+              })()}
 
               {/* 3. 중앙 계단 */}
               <g transform="translate(285, 160)">
@@ -276,7 +307,7 @@ export const MapPage: React.FC = () => {
                 <text x="45" y="180" fill="#64748b" fontSize="11" textAnchor="middle">5층 ↔ 4층</text>
               </g>
 
-              {/* 4. 5-1 교실 (연성 PC방 + 드론/로봇축구) */}
+              {/* 4. 5-1 교실 (연성 PC방 + 로봇축구) */}
               <g transform="translate(385, 160)">
                 <rect width="140" height="280" rx="12" fill="#fff" stroke="#94a3b8" strokeWidth="2" />
                 <rect x="0" y="0" width="140" height="30" rx="10" fill="#3b82f6" />
@@ -313,7 +344,7 @@ export const MapPage: React.FC = () => {
                   );
                 })()}
 
-                {/* 5-1-2 부스 (하단: 드론체험 / 로봇축구) */}
+                {/* 5-1-2 부스 (하단: 로봇축구 체험) */}
                 {(() => {
                   const b2 = BOOTHS.find((b) => b.id === 'b5-1-2')!;
                   const isFav = isFavorite('b5-1-2');
@@ -334,10 +365,10 @@ export const MapPage: React.FC = () => {
                         filter={isFav || isHl ? 'url(#glow-gold)' : undefined}
                         className="group-hover:fill-blue-100 transition-colors"
                       />
-                      <text x="10" y="22" fontSize="16">🛸</text>
-                      <text x="34" y="22" fill="#1e3a8a" fontSize="11" fontWeight="bold">5-1 ② 드론/로봇</text>
-                      <text x="10" y="44" fill="#1e40af" fontSize="12" fontWeight="bold">드론/로봇축구</text>
-                      <text x="10" y="62" fill="#3b82f6" fontSize="10">비행 & 로봇 경기</text>
+                      <text x="10" y="22" fontSize="16">🤖</text>
+                      <text x="34" y="22" fill="#1e3a8a" fontSize="11" fontWeight="bold">5-1 ② 로봇축구</text>
+                      <text x="10" y="44" fill="#1e40af" fontSize="12" fontWeight="bold">로봇축구 경기</text>
+                      <text x="10" y="62" fill="#3b82f6" fontSize="10">무선 조종 골 넣기</text>
                       <text x="10" y="80" fill="#64748b" fontSize="10">교실 뒤쪽</text>
                       {isFav && <text x="108" y="22" fontSize="14">💖</text>}
                     </g>
