@@ -93,14 +93,17 @@ export const MyCoursePage: React.FC = () => {
         {/* 진행률 바 카드 */}
         {totalCount > 0 && (
           <div className="bg-white rounded-3xl p-6 border-2 border-pink-100 shadow-sm space-y-3">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-amber-500" />
                 <span className="font-extrabold text-gray-900 text-base">체험 달성률</span>
+                <span className="px-2 py-0.5 rounded-full text-xs font-black bg-rose-100 text-rose-700">
+                  목표: 도장 9개 이상 🎁
+                </span>
               </div>
               <span className="text-sm font-black text-pink-600">
                 {totalCount}개 중 {completedCount}개 완료 ({progressPercent}%)
-                {progressPercent === 100 && ' 🎉 올 클리어!'}
+                {completedCount >= 9 ? ' 🎉 특별 상품 수령 자격 획득!' : ` (앞으로 ${9 - completedCount}개 더 받으면 선물 증정!)`}
               </span>
             </div>
 
@@ -289,7 +292,7 @@ export const MyCoursePage: React.FC = () => {
           <div>
             <h1 className="text-xl font-black text-black">2026 연성초 꿈마당 진로체험 코스 활동지</h1>
             <p className="text-xs text-gray-700 mt-0.5">
-              일시: 2026. 10. 15.(목) 09:10~12:20 | 슬로건: “꿈을 만나고, 꿈을 체험하다”
+              일시: 2026. 10. 15.(목) 09:10~12:20 | 슬로건: “오늘의 경험이 내일의 꿈이 됩니다!” (스탬프북 15개 체험)
             </p>
           </div>
           <div className="text-right border border-black p-2 rounded text-xs min-w-[200px]">
@@ -306,8 +309,8 @@ export const MyCoursePage: React.FC = () => {
 
         {/* 안내문 */}
         <div className="bg-gray-100 p-2 rounded border border-gray-400 text-xs mb-3">
-          <strong>※ 체험 참여 원칙</strong>: 1~3학년은 외부부스(특수분장/메이크업) 필수, 3~6학년은 흡연예방(이음1실) 필수입니다.
-          부스 체험 후 운영 학생이나 선생님께 확인 스탬프를 받으세요!
+          <strong>※ 스탬프북 미션</strong>: 도장을 9개 이상 받으면 특별한 상품을 받을 수 있어요! (1~3학년: 메이크업/특수분장 필수, 3~6학년: 흡연예방 필수)
+          부스 체험을 마칠 때마다 스탬프북 및 활동지에 확인 도장을 꼭 받으세요!
         </div>
 
         {/* 부스 체크리스트 표 */}
@@ -316,7 +319,7 @@ export const MyCoursePage: React.FC = () => {
             <tr className="bg-gray-200 text-black border-b border-black">
               <th className="border border-black p-1.5 w-8 text-center">순번</th>
               <th className="border border-black p-1.5 w-12 text-center">층</th>
-              <th className="border border-black p-1.5 w-24 text-center">부스코드</th>
+              <th className="border border-black p-1.5 w-24 text-center">스탬프/코드</th>
               <th className="border border-black p-1.5 text-left">부스명 및 활동 내용</th>
               <th className="border border-black p-1.5 w-32 text-center">위치</th>
               <th className="border border-black p-1.5 w-16 text-center">확인 도장</th>
@@ -327,7 +330,7 @@ export const MyCoursePage: React.FC = () => {
               <tr key={booth.id} className="border-b border-gray-400">
                 <td className="border border-black p-1.5 text-center font-bold">{idx + 1}</td>
                 <td className="border border-black p-1.5 text-center font-bold">{booth.floor}층</td>
-                <td className="border border-black p-1.5 text-center">{booth.code}</td>
+                <td className="border border-black p-1.5 text-center font-bold">{booth.stampNumber ? `${booth.stampNumber}번 (${booth.code})` : booth.code}</td>
                 <td className="border border-black p-1.5">
                   <div className="font-black text-[11pt]">{booth.name}</div>
                   <div className="text-[9pt] text-gray-700">{booth.shortDesc}</div>
@@ -356,11 +359,20 @@ export const MyCoursePage: React.FC = () => {
           </tbody>
         </table>
 
-        {/* 당일 활동 소감 간단 메모란 */}
-        <div className="border border-black p-2 rounded text-xs">
-          <strong className="block mb-1">📝 오늘 꿈마당에서 가장 기억에 남는 체험과 나의 꿈 한 줄 적기:</strong>
-          <div className="border-b border-dotted border-gray-400 h-6"></div>
-          <div className="border-b border-dotted border-gray-400 h-6"></div>
+        {/* 당일 활동 소감 간단 메모란 (가이드북 4페이지 질문 반영) */}
+        <div className="border border-black p-2.5 rounded text-xs space-y-1.5">
+          <div className="flex items-center justify-between border-b border-gray-300 pb-1">
+            <span className="font-black text-black">🌟 “지금의 작은 경험이 너의 멋진 꿈을 만들어 갈 거야!”</span>
+            <span className="text-[9pt] text-gray-600">다양한 경험 ➡️ 좋아하는 것 찾기 ➡️ 나만의 꿈을 향해 도전!</span>
+          </div>
+          <div>
+            <strong className="block text-black">⭐ 1. 오늘 가장 기억에 남는 체험은?</strong>
+            <div className="border-b border-dotted border-gray-400 h-5"></div>
+          </div>
+          <div>
+            <strong className="block text-black">❤️ 2. 앞으로 도전해 보고 싶은 꿈은?</strong>
+            <div className="border-b border-dotted border-gray-400 h-5"></div>
+          </div>
         </div>
 
         {/* 인쇄 하단 */}

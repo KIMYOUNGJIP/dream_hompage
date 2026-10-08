@@ -69,9 +69,12 @@ export const HomePage: React.FC = () => {
             {FESTIVAL_INFO.title}
           </h1>
 
-          <p className="text-xl sm:text-2xl font-bold text-amber-950 mb-6 drop-shadow-sm flex items-center gap-2">
+          <p className="text-xl sm:text-2xl font-bold text-amber-950 mb-1 drop-shadow-sm flex items-center gap-2">
             <span>✨</span>
             <span>“{FESTIVAL_INFO.slogan}”</span>
+          </p>
+          <p className="text-sm sm:text-base font-bold text-amber-900 mb-6 flex items-center gap-1.5">
+            <span>{FESTIVAL_INFO.subSlogan}</span>
           </p>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:text-base font-semibold text-gray-800 mb-6 bg-white/60 backdrop-blur-sm p-3.5 rounded-2xl border border-white/60">
@@ -104,6 +107,36 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* 가이드북 공식 스탬프북 미션 안내 배너 */}
+      <section className="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 rounded-3xl p-5 sm:p-7 text-white shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-2 border-rose-300">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl shrink-0">
+            💮
+          </div>
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/30 text-white font-extrabold text-xs mb-1">
+              <span>스탬프북 공식 미션</span>
+              <span>•</span>
+              <span>15개 체험 부스</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight">
+              도장을 9개 이상 받으면 특별한 상품 증정! 🎁
+            </h2>
+            <p className="text-xs sm:text-sm text-pink-100 mt-0.5">
+              부스 체험 후 스탬프북에 도장을 쏙쏙! 도장 9개를 모으면 신나는 특별 선물을 받을 수 있어요.
+            </p>
+          </div>
+        </div>
+
+        <Link
+          to="/my-course"
+          className="px-5 py-3 rounded-2xl bg-white text-rose-700 hover:bg-rose-50 font-black text-sm shrink-0 flex items-center gap-2 shadow-md transition-all active:scale-95"
+        >
+          <span>나의 코스로 목표 관리</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </section>
 
       {/* 4대 주요 메뉴 퀵 버튼 */}
@@ -260,6 +293,35 @@ export const HomePage: React.FC = () => {
                 <h4 className="font-extrabold text-gray-900 text-sm sm:text-base">{item.title}</h4>
                 <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">{item.desc}</p>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 가이드북 공식 성장 3단계 로드맵 카드 */}
+      <section className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-200 shadow-md">
+        <div className="text-center max-w-2xl mx-auto mb-6">
+          <span className="text-xs font-black text-amber-700 bg-amber-100 px-3 py-1 rounded-full inline-block mb-2">
+            연성초 꿈마당 성장 여정 🌱
+          </span>
+          <h2 className="text-xl sm:text-2xl font-black text-gray-900">
+            “지금의 작은 경험이 너의 멋진 꿈을 만들어 갈 거야!” ❤️
+          </h2>
+          <p className="text-sm text-gray-500 mt-1">오늘의 모든 체험은 여러분의 찬란한 내일을 여는 첫걸음입니다.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {FESTIVAL_INFO.growthSteps.map((step) => (
+            <div
+              key={step.step}
+              className="bg-amber-50/60 rounded-2xl p-5 border border-amber-200/80 text-center flex flex-col items-center justify-center space-y-2"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-amber-200 text-amber-900 flex items-center justify-center text-2xl font-black">
+                {step.emoji}
+              </div>
+              <span className="text-xs font-bold text-amber-700">STEP {step.step}</span>
+              <h3 className="text-base font-black text-gray-900">{step.title}</h3>
+              <p className="text-xs text-gray-600 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

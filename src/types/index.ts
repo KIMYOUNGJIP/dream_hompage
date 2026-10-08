@@ -20,6 +20,7 @@ export interface Booth {
   targetGrades: string; // 대상 학년 설명 (예: "전학년", "1~3학년 필수 / 4~6학년 희망")
   adjacentBoothIds: string[]; // 인접 부스 추천 2개 ID
   mapSvgId: string; // SVG 맵 상의 요소 ID
+  stampNumber?: number; // 스탬프북 1~15번 공식 번호 (가이드북 연계)
 }
 
 export interface SchedulePeriod {

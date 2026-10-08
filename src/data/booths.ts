@@ -34,6 +34,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b4-1-1',
     code: '4-1 ①',
+    stampNumber: 1,
     name: '반짝반짝 뷰티 아티스트',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -59,6 +60,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b4-1-2',
     code: '4-1 ②',
+    stampNumber: 2,
     name: '전통공예 및 놀이',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -84,6 +86,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b4-2-1',
     code: '4-2 ①',
+    stampNumber: 3,
     name: '오늘의 빛나는 디자이너',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -109,6 +112,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b4-2-2',
     code: '4-2 ②',
+    stampNumber: 4,
     name: '클레이 아트',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -134,7 +138,8 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b5-1-1',
     code: '5-1 ①',
-    name: '연성 PC방 (바이브코딩)',
+    stampNumber: 5,
+    name: '연성 pc방',
     category: 'student',
     categoryLabel: '학생 운영 부스',
     floor: 4,
@@ -143,7 +148,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 5학년 1반',
     emoji: '💻',
     shortDesc: '학생들이 직접 코딩으로 제작한 꿀잼 미니게임 오락실!',
-    description: '5학년 1반 학생들이 바이브코딩(AI & 블록코딩)으로 손수 개발한 인터랙티브 아케이드 게임을 직접 플레이해보고, 미래 프로그래머 직업을 탐구해보는 인기 만점 부스입니다.',
+    description: '5학년 1반 학생들이 바이브코딩(AI & 블록코딩)으로 손수 개발한 인터랙티브 아케이드 게임을 직접 플레이해보고, 미래 프로그래머 직업을 탐구해보는 인기 만점 부스입니다. (스탬프북 5번)',
     activities: [
       '장애물 피하기, 퀴즈 배틀, 스피드 달리기 등 학생 제작 게임 플레이',
       '게임 클리어 시 스탬프 획득 및 최고 랭킹 점수 등록',
@@ -159,6 +164,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b5-1-2',
     code: '5-1 ②',
+    stampNumber: 6,
     name: '로봇축구 체험',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -166,9 +172,9 @@ export const BOOTHS: Booth[] = [
     roomName: '5학년 1반 교실 뒤쪽',
     locationDetail: '4층 5-1 교실 (전용 축구 경기장 트랙)',
     organizer: '연성초 5학년 1반',
-    emoji: '🤖',
+    emoji: '⚽',
     shortDesc: '무선 조종 로봇을 조종해 상대 골대에 골을 넣는 로봇 축구!',
-    description: '드론과 분리되어 더욱 넓고 쾌적해진 전용 로봇 경기장! 무선 컨트롤러로 RC 축구 로봇을 정밀하게 조종하여 드리블과 강력한 슈팅으로 골을 넣는 흥미진진한 로봇 스포츠 대결 부스입니다.',
+    description: '【가이드북 스탬프 6번 부스】 무선 컨트롤러로 RC 축구 로봇을 정밀하게 조종하여 드리블과 강력한 슈팅으로 골을 넣는 흥미진진한 로봇 스포츠 대결 부스입니다. (※ 드론 비행 체험은 학생자치실 옆 드론체험실에서 단독 운영됩니다)',
     activities: [
       '2인 1조 무선 축구 로봇 기본 조종법(전진, 후진, 회전) 익히기',
       '장애물을 피해 공을 몰고 가는 드리블 챌린지',
@@ -184,6 +190,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b5-1-drone',
     code: '5-1 ③',
+    stampNumber: 6,
     name: '드론 비행 체험장',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -193,7 +200,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 5학년 1반',
     emoji: '🛸',
     shortDesc: '넓고 안전한 전용 교실에서 즐기는 미니 드론 링 통과 비행!',
-    description: '안전하고 자유로운 비행을 위해 4층 학생자치실 옆 넓은 교실로 이전하여 단독 운영되는 드론 전용 체험 부스입니다! 안전망이 완비된 공간에서 교육용 미니 드론을 직접 이륙·착륙시키고 훌라후프 링 통과 미션에 도전해 보세요.',
+    description: '【가이드북 스탬프 6번 부스】 안전하고 자유로운 비행을 위해 4층 학생자치실 옆 넓은 교실로 이전하여 단독 운영되는 드론 전용 체험 부스입니다! 안전망이 완비된 공간에서 교육용 미니 드론을 직접 이륙·착륙시키고 훌라후프 링 통과 미션에 도전해 보세요.',
     activities: [
       '미니 드론 조종기 조작법 및 안전 수칙 안내',
       '호버링(공중 정지 비행) 및 이착륙 연습',
@@ -209,6 +216,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b5-2-1',
     code: '5-2 ①',
+    stampNumber: 7,
     name: '생활용품 만들기',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -218,7 +226,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 5학년 2반',
     emoji: '🪞',
     shortDesc: '예쁜 비즈 팔찌, 손거울 키링, 나만의 독서 책갈피 만들기!',
-    description: '실생활에서 매일매일 유용하게 쓸 수 있는 소품들을 내 손으로 직접 디자인하고 만듭니다. 나만의 감성이 듬뿍 담긴 예쁜 생활용품을 완성해 친구나 가족에게 선물해보세요.',
+    description: '실생활에서 매일매일 유용하게 쓸 수 있는 소품들을 내 손으로 직접 디자인하고 만듭니다. 나만의 감성이 듬뿍 담긴 예쁜 생활용품을 완성해 친구나 가족에게 선물해보세요. (스탬프북 7번)',
     activities: [
       '우레탄 줄에 감성 비즈를 꿰어 만드는 패션 팔찌',
       '압화(말린 꽃)와 레진 스티커로 꾸미는 휴대용 원형 손거울 키링',
@@ -234,6 +242,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b5-2-2',
     code: '5-2 ②',
+    stampNumber: 8,
     name: '실내 스포츠 체험',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -241,9 +250,9 @@ export const BOOTHS: Booth[] = [
     roomName: '5학년 2반 교실 뒤쪽',
     locationDetail: '4층 5-2 교실 (매트 경기 구역)',
     organizer: '연성초 5학년 2반',
-    emoji: '🎯',
+    emoji: '🏀',
     shortDesc: '협동 놀이와 스피드 스포츠 미션으로 활력과 협동심 UP!',
-    description: '친구들과 함께 몸을 움직이며 스트레스를 날려버리는 스포츠 체험 부스입니다. 협동 공 굴리기, 컵 쌓기 챌린지, 실내 볼링 등 다양한 미니 스포츠가 준비되어 있습니다.',
+    description: '친구들과 함께 몸을 움직이며 스트레스를 날려버리는 스포츠 체험 부스입니다. 협동 공 굴리기, 컵 쌓기 챌린지, 실내 볼링 등 다양한 미니 스포츠가 준비되어 있습니다. (스탬프북 8번)',
     activities: [
       '팀원과 힘을 모아 공을 떨어뜨리지 않고 통과시키는 협동 레일 게임',
       '스피드 스포츠 스태킹(컵 쌓기) 기록 대항전',
@@ -258,17 +267,18 @@ export const BOOTHS: Booth[] = [
   },
   {
     id: 'b-parent',
-    code: '꿈이음',
-    name: '꿈이음마당 (학부모회 야시장 놀이터)',
+    code: '학부모 15번',
+    stampNumber: 15,
+    name: '[학부모회] 연성야시장',
     category: 'parent',
     categoryLabel: '학부모회 부스',
     floor: 4,
-    roomName: '4층 복도 (5-1 교실 옆)',
-    locationDetail: '4층 복도 중앙 로비 (5학년 1반 출입문 바로 앞 복도)',
+    roomName: '4층 중앙복도 (5-1 교실 앞)',
+    locationDetail: '4층 중앙 복도 로비 (5학년 1반 출입문 앞 복도)',
     organizer: '연성초등학교 학부모회',
     emoji: '🎪',
     shortDesc: '야시장 컨셉의 신나는 링 던지기, 인형 맞추기, 행운의 랜덤 뽑기!',
-    description: '연성초 학부모회에서 사랑을 듬뿍 담아 준비한 신나는 야시장 테마 놀이터입니다! 4층 복도를 오가며 누구나 즐겁게 참여할 수 있는 추억의 야시장 게임(링 던지기, 인형 타겟 맞추기, 두근두근 랜덤 뽑기)을 즐기고, 프로그램 참여 후 달콤하고 맛있는 참가 선물 간식을 받아보세요.',
+    description: '【가이드북 스탬프 15번 부스】 연성초 학부모회에서 사랑을 듬뿍 담아 준비한 신나는 야시장 테마 놀이터입니다! 4층 복도를 오가며 누구나 즐겁게 참여할 수 있는 추억의 야시장 게임(링 던지기, 인형 타겟 맞추기, 두근두근 랜덤 뽑기)을 즐기고, 프로그램 참여 후 달콤하고 맛있는 참가 선물 간식을 받아보세요.',
     activities: [
       '【링 던지기】 표적 기둥에 링을 쏙! 집중력 링 던지기 챌린지',
       '【인형 맞추기】 조준하고 팡팡! 타겟 인형 맞추기 미션',
@@ -287,6 +297,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b6-1-1',
     code: '6-1 ①',
+    stampNumber: 9,
     name: '햇반놀이터',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -296,7 +307,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 6학년 1반',
     emoji: '🥌',
     shortDesc: '긴장감 넘치는 실내사격, 플로어 컬링, 통통 튀는 탁구공게임!',
-    description: '최고 학년 6학년 형, 누나들이 준비한 박진감 넘치는 스포츠 게임 테마파크! 안전 과녁 실내사격, 손끝으로 밀어 넣는 실내 컬링, 튕겨서 컵에 넣는 탁구공 바운스 게임을 모두 즐길 수 있습니다.',
+    description: '최고 학년 6학년 형, 누나들이 준비한 박진감 넘치는 스포츠 게임 테마파크! 안전 과녁 실내사격, 손끝으로 밀어 넣는 실내 컬링, 튕겨서 컵에 넣는 탁구공 바운스 게임을 모두 즐길 수 있습니다. (스탬프북 9번)',
     activities: [
       '안전 흡착식 다트 및 너프건 타겟 정밀 사격',
       '표적 원 안에 스톤을 가장 가깝게 붙이는 테이블 컬링 대결',
@@ -312,6 +323,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b6-1-2',
     code: '6-1 ②',
+    stampNumber: 10,
     name: '슈링크 아틀리에',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -321,7 +333,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 6학년 1반',
     emoji: '🎨',
     shortDesc: '오븐에 구우면 마법처럼 작고 단단해지는 슈링클스 키링!',
-    description: '특수 슈링크 종이에 내가 좋아하는 캐릭터나 도안을 그리고 색칠한 뒤, 미니 오븐기에 구워내는 마법 같은 공예 체험! 1/7 크기로 줄어들며 플라스틱처럼 단단한 예쁜 키링이 완성됩니다.',
+    description: '특수 슈링크 종이에 내가 좋아하는 캐릭터나 도안을 그리고 색칠한 뒤, 미니 오븐기에 구워내는 마법 같은 공예 체험! 1/7 크기로 줄어들며 플라스틱처럼 단단한 예쁜 키링이 완성됩니다. (스탬프북 10번)',
     activities: [
       '슈링크 투명 필름에 네임펜과 파스텔로 나만의 그림 그리기',
       '열풍 오븐 속에서 춤추듯 줄어드는 슈링크 플라스틱 관찰하기',
@@ -331,12 +343,13 @@ export const BOOTHS: Booth[] = [
     cautions: '구워진 직후의 플라스틱은 뜨거우니 반드시 6학년 도우미가 집게로 꺼냅니다.',
     durationMinutes: 20,
     targetGrades: '전학년 (1~6학년)',
-    adjacentBoothIds: ['b6-1-1', 'b-job-1'],
+    adjacentBoothIds: ['b6-1-1', 'b-job-2'],
     mapSvgId: 'room-6-1'
   },
   {
     id: 'b6-2-1',
     code: '6-2 ①',
+    stampNumber: 11,
     name: '비추미 오싹 교실',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -346,7 +359,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 6학년 2반',
     emoji: '👻',
     shortDesc: '공포 상황 속 미션 수행! 나의 용기와 회복탄력성 테스트!',
-    description: '어두컴컴한 암막 교실 안에서 펼쳐지는 스릴 만점의 미션 체험! 두려움을 이겨내고 친구와 손을 맞잡고 단서를 찾아 탈출하며 마음의 용기와 회복탄력성을 키워봅니다.',
+    description: '어두컴컴한 암막 교실 안에서 펼쳐지는 스릴 만점의 미션 체험! 두려움을 이겨내고 친구와 손을 맞잡고 단서를 찾아 탈출하며 마음의 용기와 회복탄력성을 키워봅니다. (스탬프북 11번)',
     activities: [
       '작은 미니 손전등을 들고 어둠 속 암호 글자 찾기',
       '소리 나는 미스터리 박스 안에 손을 넣어 숨겨진 열쇠 꺼내기',
@@ -362,6 +375,7 @@ export const BOOTHS: Booth[] = [
   {
     id: 'b6-2-2',
     code: '6-2 ②',
+    stampNumber: 12,
     name: '쉿, 비밀 마음 편지',
     category: 'student',
     categoryLabel: '학생 운영 부스',
@@ -371,7 +385,7 @@ export const BOOTHS: Booth[] = [
     organizer: '연성초 6학년 2반',
     emoji: '💌',
     shortDesc: '평소 전하지 못한 진심을 글로 쓰고 음성으로 전하는 배달 서비스!',
-    description: '친구, 후배, 선배, 선생님께 고마움과 사랑을 전하는 특별 배달 우체국! 예쁜 편지지에 비밀 편지를 쓰거나 큐알코드 음성 편지를 녹음하면, 6학년 배달 특공대가 해당 교실로 직접 전달해 드립니다.',
+    description: '친구, 후배, 선배, 선생님께 고마움과 사랑을 전하는 특별 배달 우체국! 예쁜 편지지에 비밀 편지를 쓰거나 큐알코드 음성 편지를 녹음하면, 6학년 배달 특공대가 해당 교실로 직접 전달해 드립니다. (스탬프북 12번)',
     activities: [
       '비밀 편지지 작성 및 실링 왁스 느낌 스티커로 봉인하기',
       '따뜻한 목소리를 담는 음성 녹음 메시지 카드 제작',
@@ -385,29 +399,56 @@ export const BOOTHS: Booth[] = [
     mapSvgId: 'room-6-2'
   },
   {
-    id: 'b-job-1',
-    code: '꿈JOB',
-    name: '꿈JOB마당 (특수분장 & 메이크업)',
+    id: 'b-job-2',
+    code: '직업 13번',
+    stampNumber: 13,
+    name: '[직업체험] 메이크업 아티스트',
     category: 'external',
     categoryLabel: '외부 전문기관',
     floor: 5,
-    roomName: '5층 동아리 1·2실',
-    locationDetail: '5층 동아리 1실(특수분장) 및 2실(메이크업아티스트)',
+    roomName: '5층 동아리 1실',
+    locationDetail: '5층 동아리 1실 (중앙계단 좌측)',
+    organizer: '한국미래진로센터 전문 강사진',
+    emoji: '💄',
+    shortDesc: '프로 메이크업 아티스트의 뷰티 테크닉 및 피부 톤 맞춤 스타일링!',
+    description: '【가이드북 스탬프 13번 부스】 전문 뷰티 아티스트 강사님과 함께하는 세련된 직업의 세계! 피부 톤 진단(퍼스널 컬러)과 포인트 메이크업, 프로 아티스트의 도구들을 직접 살펴보고 나의 매력을 돋보이게 하는 스타일링을 배워봅니다.',
+    activities: [
+      '퍼스널 피부 톤 진단 및 포인트 메이크업 시연',
+      '전문 메이크업 브러시와 화장 도구 탐구',
+      '뷰티 크리에이터 & 메이크업 아티스트 진로 질의응답'
+    ],
+    materials: '전문 메이크업 키트, 피부 저자극 화장품, 소독용 티슈',
+    cautions: '1·2·3학년 필수 체험 부스입니다. 피부가 예민한 학생은 손등 테스트 후 체험을 진행합니다.',
+    durationMinutes: 20,
+    targetGrades: '1·2·3학년 필수 순환 / 4·5·6학년 희망자 선택',
+    adjacentBoothIds: ['b-job-1', 'b6-1-1'],
+    mapSvgId: 'room-job-2'
+  },
+  {
+    id: 'b-job-1',
+    code: '직업 14번',
+    stampNumber: 14,
+    name: '[직업체험] 특수분장사',
+    category: 'external',
+    categoryLabel: '외부 전문기관',
+    floor: 5,
+    roomName: '5층 동아리 2실',
+    locationDetail: '5층 동아리 2실 (5층 맨 왼쪽)',
     organizer: '한국미래진로센터 전문 강사진',
     emoji: '🎭',
-    shortDesc: '전문 뷰티·특수분장 아티스트 직업 체험 및 페이스페인팅!',
-    description: '전문 진로체험 기관인 한국미래진로센터 강사님들과 함께하는 생생한 직업 세계! 영화·방송 속 특수분장의 원리와 프로 메이크업 아티스트의 도구를 직접 관찰하고, 실감 나는 상처 분장이나 멋진 페이스페인팅을 직접 받아봅니다.',
+    shortDesc: '영화·방송 속 신기한 상처 분장과 실감 나는 특수 페이스페인팅!',
+    description: '【가이드북 스탬프 14번 부스】 영화와 방송 속 실감 나는 특수효과의 비밀! 전문 특수분장사 강사님과 함께 인공 피부 왁스와 식용 색소를 활용해 리얼한 영화 상처 분장과 캐릭터 페이스페인팅을 직접 체험해 봅니다.',
     activities: [
-      '【동아리 1실】 특수분장: 영화 속 인공 상처, 흉터, 페이스페인팅 시연 및 체험',
-      '【동아리 2실】 메이크업아티스트: 피부 톤 진단, 포인트 메이크업 및 직업 특강',
-      '전문 아티스트와의 1:1 진로 질의응답 및 미래 진로 포토존 사진 촬영'
+      '영화 속 인공 상처 및 흉터 특수분장 시연 및 손등 체험',
+      '캐릭터 특수 페이스페인팅 실습',
+      '특수분장사 직업 이야기와 미래 SF 특수효과 질의응답'
     ],
-    materials: '피부 무독성 분장용 왁스, 식용 인공 피, 프로 메이크업 팔레트, 소독용 티슈',
-    cautions: '1·2·3학년은 필수 참여 부스입니다. 분장 후 물이나 비누로 깨끗이 지워집니다.',
+    materials: '무독성 분장용 왁스, 식용 인공 피, 특수 페이스페인팅 물감',
+    cautions: '1·2·3학년 필수 체험 부스입니다. 분장은 물과 비누로 깨끗이 지워지며 옷에 묻지 않도록 주의합니다.',
     durationMinutes: 20,
-    targetGrades: '1·2·3학년 필수 / 4·5·6학년 희망자 선택',
-    adjacentBoothIds: ['b6-1-1', 'b-health'],
-    mapSvgId: 'room-job'
+    targetGrades: '1·2·3학년 필수 순환 / 4·5·6학년 희망자 선택',
+    adjacentBoothIds: ['b-job-2', 'b-health'],
+    mapSvgId: 'room-job-1'
   },
   {
     id: 'b-health',
@@ -421,7 +462,7 @@ export const BOOTHS: Booth[] = [
     organizer: '전문 보건기관 가드너스',
     emoji: '🫁',
     shortDesc: '나의 튼튼한 폐활량 측정 & 금연 다짐 키링 만들기!',
-    description: '건강한 나의 몸과 밝은 미래를 위해 흡연의 위험성을 배우고 체험하는 보건 진로 부스입니다. 디지털 폐활량 측정기로 내 호흡 건강을 직접 수치로 확인하고, 평생 노담(No 담배)을 약속하는 멋진 금연 키링을 만듭니다.',
+    description: '【가이드북 5층 필수 건강 부스】 건강한 나의 몸과 밝은 미래를 위해 흡연의 위험성을 배우고 체험하는 보건 진로 부스입니다. 디지털 폐활량 측정기로 내 호흡 건강을 직접 수치로 확인하고, 평생 노담(No 담배)을 약속하는 멋진 금연 키링을 만듭니다.',
     activities: [
       '디지털 폐활량계로 나의 숨 파워 측정 및 건강 등급 확인',
       '흡연자의 폐 모형과 정상 폐 모형 직접 비교 관찰',
@@ -431,14 +472,28 @@ export const BOOTHS: Booth[] = [
     cautions: '폐활량 측정 시 개인별 1회용 마우스피스를 사용하여 위생적으로 진행됩니다.',
     durationMinutes: 20,
     targetGrades: '3·4·5·6학년 고학년 필수 / 1·2학년 희망 체험 가능',
-    adjacentBoothIds: ['b6-2-1', 'b-job-1'],
+    adjacentBoothIds: ['b6-2-2', 'b-job-2'],
     mapSvgId: 'room-health'
   }
 ];
 
 export const FESTIVAL_INFO = {
   title: '2026 연성초 꿈마당 (진로의 날)',
-  slogan: '꿈을 만나고, 꿈을 체험하다',
+  slogan: '오늘의 경험이 내일의 꿈이 됩니다!',
+  subSlogan: '나의 꿈을 찾아 떠나는 즐거운 체험 여행! 🚀',
+  motto: '지금의 작은 경험이 너의 멋진 꿈을 만들어 갈 거야! ✨',
+  stampGoal: 9,
+  stampTotal: 15,
+  stampRewardText: '도장을 9개 이상 받으면 특별한 상품을 받을 수 있어요! 🎁',
+  growthSteps: [
+    { step: 1, title: '다양한 경험을 해보고', desc: '15가지 다채로운 직업·놀이 부스에 푹 빠져보기', emoji: '🔍' },
+    { step: 2, title: '좋아하는 것을 찾고', desc: '나의 숨은 흥미와 적성을 스스로 탐색하기', emoji: '💖' },
+    { step: 3, title: '나만의 꿈을 향해 도전해요!', desc: '새로운 미래를 향해 당당하게 첫걸음 내딛기', emoji: '🚀' },
+  ],
+  reflectionQuestions: [
+    { id: 1, title: '오늘 가장 기억에 남는 체험은?', placeholder: '가장 신나고 인상 깊었던 부스와 그 이유를 적어보세요.', emoji: '⭐' },
+    { id: 2, title: '앞으로 도전해 보고 싶은 꿈은?', placeholder: '체험을 통해 새롭게 관심 갖게 된 나의 멋진 미래 꿈을 적어보세요.', emoji: '❤️' }
+  ],
   date: '2026년 10월 15일(목)',
   dateIso: '2026-10-15T09:10:00+09:00',
   time: '09:10 ~ 12:20',
@@ -448,7 +503,7 @@ export const FESTIVAL_INFO = {
     {
       num: 1,
       title: '1·2·3학년은 외부업체 부스 모두 필수 체험',
-      desc: '꿈JOB마당(특수분장/메이크업)은 1~3학년 필수 체험 코스입니다.'
+      desc: '13번 메이크업 아티스트와 14번 특수분장사 부스는 1~3학년 필수 체험 코스입니다.'
     },
     {
       num: 2,

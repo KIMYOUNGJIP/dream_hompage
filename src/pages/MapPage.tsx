@@ -212,9 +212,9 @@ export const MapPage: React.FC = () => {
                       filter={isFav || isHl ? 'url(#glow-gold)' : undefined}
                       className="group-hover:fill-rose-100 transition-colors"
                     />
-                    <rect x="8" y="8" width="40" height="24" rx="6" fill="#e11d48" />
-                    <text x="28" y="24" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle">학부모</text>
-                    <text x="56" y="24" fill="#9f1239" fontSize="13" fontWeight="bold">꿈이음 야시장 🎪</text>
+                    <rect x="8" y="8" width="54" height="24" rx="6" fill="#e11d48" />
+                    <text x="35" y="24" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle">15번 부스</text>
+                    <text x="70" y="24" fill="#9f1239" fontSize="13" fontWeight="bold">연성야시장 🎪</text>
                     <text x="12" y="48" fill="#881337" fontSize="12" fontWeight="bold">링던지기·인형맞추기·뽑기</text>
                     <text x="12" y="68" fill="#be123c" fontSize="11">참가선물 간식 제공 🍭</text>
                     {isFav && <text x="190" y="24" fontSize="16">💖</text>}
@@ -611,14 +611,14 @@ export const MapPage: React.FC = () => {
               <text x="70" y="92" fill="#0284c7" fontSize="12">※ 6학년 부스 및 외부 전문 부스가 운영되는 층입니다</text>
 
               {/* 하단 방들 (좌 -> 우: 외부1, 외부2, 중앙계단, 6-1, 6-2, 흡연예방) */}
-              {/* 1. 외부부스 1: 꿈JOB마당 특수분장 (동아리 1실) */}
+              {/* 1. 외부부스 14번: 특수분장사 (동아리 2실) */}
               {(() => {
-                const bJob = BOOTHS.find((b) => b.id === 'b-job-1')!;
+                const bJob14 = BOOTHS.find((b) => b.id === 'b-job-1')!;
                 const isFav = isFavorite('b-job-1');
                 const isHl = highlightParam === 'b-job-1';
                 return (
                   <g
-                    onClick={() => setSelectedBooth(bJob)}
+                    onClick={() => bJob14 && setSelectedBooth(bJob14)}
                     className="cursor-pointer transition-all group"
                     transform="translate(35, 160)"
                   >
@@ -633,27 +633,27 @@ export const MapPage: React.FC = () => {
                       className="group-hover:fill-purple-100 transition-colors"
                     />
                     <rect x="0" y="0" width="155" height="32" rx="10" fill="#7c3aed" />
-                    <text x="77" y="21" fill="#fff" fontSize="13" fontWeight="bold" textAnchor="middle">동아리 1실 (외부)</text>
+                    <text x="77" y="21" fill="#fff" fontSize="13" fontWeight="bold" textAnchor="middle">동아리 2실 (14번)</text>
                     <text x="15" y="65" fontSize="26">🎭</text>
-                    <text x="15" y="95" fill="#5b21b6" fontSize="13" fontWeight="bold">외부부스 1</text>
-                    <text x="15" y="120" fill="#4c1d95" fontSize="15" fontWeight="black">특수분장</text>
-                    <text x="15" y="142" fill="#6d28d9" fontSize="11">페이스페인팅/상처</text>
+                    <text x="15" y="95" fill="#5b21b6" fontSize="13" fontWeight="bold">직업체험 14번</text>
+                    <text x="15" y="120" fill="#4c1d95" fontSize="15" fontWeight="black">특수분장사</text>
+                    <text x="15" y="142" fill="#6d28d9" fontSize="11">상처분장/페이스페인팅</text>
                     <text x="15" y="170" fill="#7c3aed" fontSize="11" fontWeight="bold">한국미래진로센터</text>
                     <rect x="15" y="190" width="125" height="24" rx="6" fill="#f5d0fe" />
-                    <text x="77" y="206" fill="#86198f" fontSize="10" fontWeight="bold" textAnchor="middle">1·2·3학년 필수</text>
+                    <text x="77" y="206" fill="#86198f" fontSize="10" fontWeight="bold" textAnchor="middle">1·2·3학년 필수 순환</text>
                     {isFav && <text x="120" y="65" fontSize="18">💖</text>}
                   </g>
                 );
               })()}
 
-              {/* 2. 외부부스 2: 꿈JOB마당 메이크업 (동아리 2실) */}
+              {/* 2. 외부부스 13번: 메이크업 아티스트 (동아리 1실) */}
               {(() => {
-                const bJob = BOOTHS.find((b) => b.id === 'b-job-1')!;
-                const isFav = isFavorite('b-job-1');
-                const isHl = highlightParam === 'b-job-1';
+                const bJob13 = BOOTHS.find((b) => b.id === 'b-job-2')!;
+                const isFav = isFavorite('b-job-2');
+                const isHl = highlightParam === 'b-job-2';
                 return (
                   <g
-                    onClick={() => setSelectedBooth(bJob)}
+                    onClick={() => bJob13 && setSelectedBooth(bJob13)}
                     className="cursor-pointer transition-all group"
                     transform="translate(200, 160)"
                   >
@@ -668,14 +668,14 @@ export const MapPage: React.FC = () => {
                       className="group-hover:fill-purple-100 transition-colors"
                     />
                     <rect x="0" y="0" width="155" height="32" rx="10" fill="#7c3aed" />
-                    <text x="77" y="21" fill="#fff" fontSize="13" fontWeight="bold" textAnchor="middle">동아리 2실 (외부)</text>
+                    <text x="77" y="21" fill="#fff" fontSize="13" fontWeight="bold" textAnchor="middle">동아리 1실 (13번)</text>
                     <text x="15" y="65" fontSize="26">💄</text>
-                    <text x="15" y="95" fill="#5b21b6" fontSize="13" fontWeight="bold">외부부스 2</text>
+                    <text x="15" y="95" fill="#5b21b6" fontSize="13" fontWeight="bold">직업체험 13번</text>
                     <text x="15" y="120" fill="#4c1d95" fontSize="15" fontWeight="black">메이크업 아티스트</text>
-                    <text x="15" y="142" fill="#6d28d9" fontSize="11">피부 톤 진단/스타일</text>
+                    <text x="15" y="142" fill="#6d28d9" fontSize="11">피부 톤 진단/스타일링</text>
                     <text x="15" y="170" fill="#7c3aed" fontSize="11" fontWeight="bold">한국미래진로센터</text>
                     <rect x="15" y="190" width="125" height="24" rx="6" fill="#f5d0fe" />
-                    <text x="77" y="206" fill="#86198f" fontSize="10" fontWeight="bold" textAnchor="middle">1·2·3학년 필수</text>
+                    <text x="77" y="206" fill="#86198f" fontSize="10" fontWeight="bold" textAnchor="middle">1·2·3학년 필수 순환</text>
                     {isFav && <text x="120" y="65" fontSize="18">💖</text>}
                   </g>
                 );

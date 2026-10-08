@@ -12,10 +12,11 @@ export const BoothsPage: React.FC = () => {
   const [selectedFloor, setSelectedFloor] = useState<'all' | '4' | '5'>('all');
   const [selectedCategory, setSelectedCategory] = useState<'all' | BoothCategory>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [sortBy, setSortBy] = useState<'stamp' | 'floor' | 'name'>('stamp');
 
   // 필터링된 부스 목록
   const filteredBooths = useMemo(() => {
-    return BOOTHS.filter((booth) => {
+    const list = BOOTHS.filter((booth) => {
       // 층 필터
       if (selectedFloor !== 'all' && booth.floor.toString() !== selectedFloor) {
         return false;
@@ -32,12 +33,26 @@ export const BoothsPage: React.FC = () => {
         const matchShortDesc = booth.shortDesc.toLowerCase().includes(query);
         const matchOrganizer = booth.organizer.toLowerCase().includes(query);
         const matchCode = booth.code.toLowerCase().includes(query);
+        const matchStamp = booth.stampNumber ? (`${booth.stampNumber}번`.includes(query) || `${booth.stampNumber}` === query) : false;
         const matchActivity = booth.activities.some((act) => act.toLowerCase().includes(query));
-        return matchName || matchDesc || matchShortDesc || matchOrganizer || matchCode || matchActivity;
+        return matchName || matchDesc || matchShortDesc || matchOrganizer || matchCode || matchStamp || matchActivity;
       }
       return true;
     });
-  }, [selectedFloor, selectedCategory, searchQuery]);
+
+    return list.sort((a, b) => {
+      if (sortBy === 'stamp') {
+        const stampA = a.stampNumber ?? 99;
+        const stampB = b.stampNumber ?? 99;
+        if (stampA !== stampB) return stampA - stampB;
+        return a.floor - b.floor;
+      }
+      if (sortBy === 'floor') {
+        return a.floor - b.floor;
+      }
+      return a.name.localeCompare(b.name);
+    });
+  }, [selectedFloor, selectedCategory, searchQuery, sortBy]);
 
   return (
     <div className="space-y-8 pb-12">
@@ -169,22 +184,45 @@ export const BoothsPage: React.FC = () => {
       </div>
 
       {/* 부스 결과 카운트 */}
-      <div className="flex items-center justify-between px-2">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-2">
         <span className="text-sm font-bold text-gray-600">
           검색 결과 <span className="text-amber-700 font-extrabold">{filteredBooths.length}</span>개 부스
         </span>
-        {(selectedFloor !== 'all' || selectedCategory !== 'all' || searchQuery !== '') && (
-          <button
-            onClick={() => {
-              setSelectedFloor('all');
-              setSelectedCategory('all');
-              setSearchQuery('');
-            }}
-            className="text-xs text-amber-700 font-extrabold hover:underline"
-          >
-            필터 전체 초기화
-          </button>
-        )}
+
+        <div className="flex items-center gap-2">
+          {/* 정렬 버튼 */}
+          <div className="flex items-center bg-gray-100 p-1 rounded-xl text-xs font-bold text-gray-600">
+            <button
+              onClick={() => setSortBy('stamp')}
+              className={`px-2.5 py-1 rounded-lg transition-all ${
+                sortBy === 'stamp' ? 'bg-white text-rose-600 font-black shadow-xs' : 'hover:text-gray-900'
+              }`}
+            >
+              스탬프 1~15번 순
+            </button>
+            <button
+              onClick={() => setSortBy('floor')}
+              className={`px-2.5 py-1 rounded-lg transition-all ${
+                sortBy === 'floor' ? 'bg-white text-amber-900 font-black shadow-xs' : 'hover:text-gray-900'
+              }`}
+            >
+              층별 순
+            </button>
+          </div>
+
+          {(selectedFloor !== 'all' || selectedCategory !== 'all' || searchQuery !== '') && (
+            <button
+              onClick={() => {
+                setSelectedFloor('all');
+                setSelectedCategory('all');
+                setSearchQuery('');
+              }}
+              className="text-xs text-amber-700 font-extrabold hover:underline ml-2"
+            >
+              초기화
+            </button>
+          )}
+        </div>
       </div>
 
       {/* 부스 카드 그리드 (모바일 1열, 태블릿 2열, PC 3~4열) */}
@@ -207,6 +245,7 @@ export const BoothsPage: React.FC = () => {
                 <div className="p-5 pb-3">
                   <div className="flex items-start justify-between gap-2 mb-3">
                     <div className="flex flex-wrap items-center gap-1.5">
+                      {booth.stampNumber && (<span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-rose-500 text-white shadow-xs">스탬프 {booth.stampNumber}번</span>)}
                       <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-amber-100 text-amber-900">
                         {booth.floor}층
                       </span>
