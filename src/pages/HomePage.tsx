@@ -5,7 +5,9 @@ import {
   Clock, 
   MapPin, 
   ArrowRight, 
-  Sparkles 
+  Sparkles,
+  Play,
+  ExternalLink 
 } from 'lucide-react';
 import { BOOTHS, FESTIVAL_INFO } from '../data/booths';
 import { MAIN_PERIODS } from '../data/schedule';
@@ -138,6 +140,49 @@ export const HomePage: React.FC = () => {
           <ArrowRight className="w-4 h-4" />
         </Link>
       </section>
+
+      {/* 🎬 2026 연성 꿈마당 공식 홍보 영상 플레이어 */}
+      {FESTIVAL_INFO.promoVideo && (
+        <section className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-200/90 shadow-xl overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-xs mb-2">
+                <Play className="w-3.5 h-3.5 text-amber-700 fill-amber-700" />
+                <span>축제 공식 홍보 영상</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 flex items-center gap-2">
+                <span>🎬</span>
+                <span>{FESTIVAL_INFO.promoVideo.title}</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                {FESTIVAL_INFO.promoVideo.desc}
+              </p>
+            </div>
+
+            <a
+              href={FESTIVAL_INFO.promoVideo.shareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 bg-amber-50 hover:bg-amber-100 px-4 py-2.5 rounded-xl border border-amber-200/80 transition-all self-start sm:self-auto shrink-0"
+              title="새 창에서 원본 영상 보기"
+            >
+              <span>새 창에서 크게 보기</span>
+              <ExternalLink className="w-4 h-4 text-amber-700" />
+            </a>
+          </div>
+
+          {/* 반응형 16:9 영상 임베드 프레임 */}
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-inner border border-amber-200">
+            <iframe
+              src={FESTIVAL_INFO.promoVideo.embedUrl}
+              title={FESTIVAL_INFO.promoVideo.title}
+              className="w-full h-full border-0 absolute inset-0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
 
       {/* 4대 주요 메뉴 퀵 버튼 */}
       <section>

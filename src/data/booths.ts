@@ -520,5 +520,11 @@ export const FESTIVAL_INFO = {
       title: '4·5·6학년 A조 / B조 교대 운영',
       desc: 'A조(1부 체험 / 2부 부스 운영), B조(1부 부스 운영 / 2부 체험)로 나뉘어 참여합니다.'
     }
-  ]
+  ],
+  promoVideo: {
+    embedUrl: 'https://drive.google.com/file/d/1Vr4k682BRY6F_z2drXhJ6Chq2p2gbF0w/preview',
+    shareUrl: 'https://drive.google.com/file/d/1Vr4k682BRY6F_z2drXhJ6Chq2p2gbF0w/view?usp=sharing',
+    title: '2026 연성초 꿈마당 축제 홍보 영상',
+    desc: '신나고 특별한 꿈마당 축제의 순간을 영상으로 미리 만나보세요!'
+  }
 };
